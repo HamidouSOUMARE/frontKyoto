@@ -1,0 +1,137 @@
+.body {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	padding: 2rem;
+	background-color: #f4f4f2; /* Couleur de fond subtile, inspirée des tons neutres japonais */
+	font-family: 'Noto Sans JP', sans-serif; /* Vous pouvez utiliser Google Fonts pour obtenir cette police qui est moderne et inspirée du Japon */
+	background-image: url('../../../public/img/feu-dartifice.jpg');
+	background-size: cover;   /* assure que l'image couvre toute la div */
+	background-position: center;  /* centre l'image d'arrière-plan */
+	background-repeat: no-repeat; /* empêche la répétition de l'image */
+	background-attachment: fixed;
+  }
+  
+  .activite-section {
+	border: 1px solid #ddd;
+	box-shadow: 2px 2px 12px rgba(0, 0, 0, 0.1);
+	margin: 2rem 0;
+	width: 80%;
+	padding: 1rem;
+	background-color: #fff;
+  }
+  
+  .activite-title {
+	font-size: 1.5rem;
+	border-bottom: 2px solid #333;
+	padding-bottom: 0.5rem;
+	margin-bottom: 1rem;
+	text-align: center;
+  }
+  
+  .activite-list {
+	list-style: none;
+	padding: 0;
+  }
+  
+  .activite-item {
+	padding: 0.5rem 0;
+	text-align: center;
+	font-size: 1.1rem;
+  }
+  
+  .activite-section h2 {
+	cursor: pointer;
+  }
+  
+  .chateau-item {
+	justify-content: center;
+  }
+  
+  .chateau-item, .temple-item, .activite-item {
+	display: flex;
+	align-items: center;
+	margin-bottom: 20px;
+  }
+  
+  .chateau-item img, .temple-item img, .activite-item img {
+	width: 150px;
+	height: 100px; 
+	margin-right: 20px;
+	object-fit: cover;
+	border-radius: 5px;
+  }
+  
+  .chateau-section {
+	width: 70%;  /* Réduire la largeur à 70% de son conteneur */
+	margin-left: auto;
+	margin-right: auto;
+	padding: 10px;     
+	background-color: rgba(220, 220, 220, 0.7);  /* Gris clair translucide */
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);   /* Ombre légère */
+	text-align: center;  /* Centrer le contenu à l'intérieur */
+	border-radius: 5px;
+	margin-bottom: 30px;
+  }
+  
+  .chateau-section h2 {
+	margin-top: 10px;
+	margin-bottom: 15px; 
+	cursor: pointer;
+  }
+  
+  .image-container {
+	position: relative;
+	width: 150px; /* Ajustez ces valeurs selon vos besoins */
+	height: 100px; 
+	overflow: hidden; /* Cache les parties de l'image qui dépassent */
+  }
+  
+  .image-container img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover; /* Adapte l'image à la taille de .image-container */
+	display: block;
+  }
+  
+  .overlay {
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	background-color: rgba(0, 0, 0, 0.5); /* Overlay semi-transparent */
+	color: white;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	opacity: 0;
+	transition: opacity 0.3s;
+	cursor: pointer;
+  }
+  
+  .image-container:hover .overlay {
+	opacity: 1;
+  }
+  
+  .chateau-description {
+	max-width: 60%; /* Vous pouvez ajuster cette valeur selon vos besoins */
+	padding: 0 10px; /* Un peu d'espacement pour aérer le contenu */
+  }
+  
+  .toggle-indicator {
+	display: inline-block;
+	width: 0;
+	height: 0;
+	margin-left: 10px;
+	border-left: 8px solid transparent;
+	border-right: 8px solid transparent;
+	border-top: 8px solid #333;
+	cursor: pointer;
+	vertical-align: middle;
+  }
+  
+  .chateau-section h2.open .toggle-indicator {
+	border-top: none;
+	border-bottom: 8px solid #333;
+  }
