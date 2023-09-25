@@ -106,241 +106,70 @@ const KyotoAttractions = () => {
     ];
 
     return (
-        <div className='bgi'>
-            <div className="kyoto-attractions">
-                <Navigation />
-                <h1>Découvertes à Kyoto</h1>
 
-                <div className="section-wrapper" id="chateaux">
-                    <h2 style={{color: "#FFF"}} onClick={() => toggleSection('chateaux')} className={openSections.chateaux ? 'open' : ''}>
-                        Châteaux <span className="toggle-indicator"></span>
-                    </h2>
-                    <div className="attractions-list" style={{ display: openSections.chateaux ? 'flex' : 'none' }}>
-                        {chateaux.map(chateau => (
-                            <div className="attraction-card" key={chateau.nom}>
-                                <div className="image-wrapper">
-                                    <img src={chateau.imagePath} alt={chateau.nom} />
-                                    <div className="overlay">Voir sur la carte</div>
-                                    <Link to={`/itineraire?location=${chateau.nom}`} className="overlay-link"></Link>
-                                </div>
-                                <h2>{chateau.nom}</h2>
-                                <p className='description'>{chateau.description}</p>
+
+        <div className="kyoto-attractions bgi">
+            <Navigation/>
+            <h1>Découvertes à Kyoto</h1>
+
+            <div className="section-wrapper" id="chateaux">
+                <h2 style={{ color: "#FFF" }} onClick={() => toggleSection('chateaux')} className={openSections.chateaux ? 'open' : ''}>
+                    Châteaux <span className="toggle-indicator"></span>
+                </h2>
+                <div className="attractions-list" style={{ display: openSections.chateaux ? 'flex' : 'none' }}>
+                    {chateaux.map(chateau => (
+                        <div className="attraction-card" key={chateau.nom}>
+                            <div className="image-wrapper">
+                                <img src={chateau.imagePath} alt={chateau.nom} />
+                                <div className="overlay">Voir sur la carte</div>
+                                <Link to={`/itineraire?location=${chateau.nom}`} className="overlay-link"></Link>
                             </div>
-                        ))}
-                    </div>
+                            <h2>{chateau.nom}</h2>
+                            <p className='description'>{chateau.description}</p>
+                        </div>
+                    ))}
                 </div>
+            </div>
 
-                <div className="section-wrapper" id="temples">
-                    <h2 style={{color: "#FFF"}} onClick={() => toggleSection('temples')} className={openSections.temples ? 'open' : ''}>
-                        Temples <span className="toggle-indicator"></span>
-                    </h2>
-                    <div className="attractions-list" style={{ display: openSections.temples ? 'flex' : 'none' }}>
-                        {temples.map(temple => (
-                            <div className="attraction-card" key={temple.nom}>
-                                <div className="image-wrapper">
-                                    <img src={temple.imagePath} alt={temple.nom} />
-                                    <div className="overlay">Voir sur la carte</div>
-                                    <Link to={`/itineraire?location=${temple.nom}`} className="overlay-link"></Link>
-                                </div>
-                                <h2>{temple.nom}</h2>
-                                <p className='description'>{temple.description}</p>
+            <div className="section-wrapper" id="temples">
+                <h2 style={{ color: "#FFF" }} onClick={() => toggleSection('temples')} className={openSections.temples ? 'open' : ''}>
+                    Temples <span className="toggle-indicator"></span>
+                </h2>
+                <div className="attractions-list" style={{ display: openSections.temples ? 'flex' : 'none' }}>
+                    {temples.map(temple => (
+                        <div className="attraction-card" key={temple.nom}>
+                            <div className="image-wrapper">
+                                <img src={temple.imagePath} alt={temple.nom} />
+                                <div className="overlay">Voir sur la carte</div>
+                                <Link to={`/itineraire?location=${temple.nom}`} className="overlay-link"></Link>
                             </div>
-                        ))}
-                    </div>
+                            <h2>{temple.nom}</h2>
+                            <p className='description'>{temple.description}</p>
+                        </div>
+                    ))}
                 </div>
+            </div>
 
-                <div className="section-wrapper" id="activites-en-ville">
-                    <h2 style={{color: "#FFF"}} onClick={() => toggleSection('activites')} className={openSections.activites ? 'open' : ''}>
+            <div className="section-wrapper" id="activites-en-ville">
+                <h2 style={{ color: "#FFF" }} onClick={() => toggleSection('activites')} className={openSections.activites ? 'open' : ''}>
                     Activitées en ville <span className="toggle-indicator"></span>
-                    </h2>
-                    <div className="attractions-list" style={{ display: openSections.activites ? 'flex' : 'none' }}>
-                        {activites.map(activite => (
-                            <div className="attraction-card" key={activite.nom}>
-                                <div className="image-wrapper">
-                                    <img src={activite.imagePath} alt={activite.nom} />
-                                    <div className="overlay">Voir sur la carte</div>
-                                    <Link to={`/itineraire?location=${activite.nom}`} className="overlay-link"></Link>
-                                </div>
-                                <h2>{activite.nom}</h2>
-                                <p className='description'>{activite.description}</p>
+                </h2>
+                <div className="attractions-list" style={{ display: openSections.activites ? 'flex' : 'none' }}>
+                    {activites.map(activite => (
+                        <div className="attraction-card" key={activite.nom}>
+                            <div className="image-wrapper">
+                                <img src={activite.imagePath} alt={activite.nom} />
+                                <div className="overlay">Voir sur la carte</div>
+                                <Link to={`/itineraire?location=${activite.nom}`} className="overlay-link"></Link>
                             </div>
-                        ))}
-                    </div>
+                            <h2>{activite.nom}</h2>
+                            <p className='description'>{activite.description}</p>
+                        </div>
+                    ))}
                 </div>
 
-                <style jsx>{`
-                .kyoto-attractions {
-                    font-family: 'Noto Sans JP', sans-serif;
-                    text-align: center;
-                    padding: 20px;
-                    overflow-y: auto;
-                    max-height: 100vh;
-                }
 
-                .section-wrapper {
-                    background-color: rgba(220, 220, 220, 0.7);
-                    margin-bottom: 20px;
-                    padding: 10px;
-                    border-radius: 5px;
-                    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-                    width : 70%;
-                    margin-left: auto;
-                    margin-right: auto;
-                }
-
-                .attractions-list {
-                    display: flex;
-                    flex-wrap: wrap;
-                    justify-content: space-around;
-                }
-
-                .attraction-card {
-                    box-shadow: 0 0 10px rgba(0,0,0,0.1);
-                    margin: 20px;
-                    padding: 15px;
-                    border-radius: 10px;
-                    background-color: white;
-                    width: 300px;
-                }                
-
-                .attraction-card img {
-                    width: 260px;      
-                    height: 150px;     
-                    border-radius: 10px;
-                    transition: opacity 0.3s;
-                }
-
-                h1 {
-                    color: #FFF;
-                    margin-bottom: 10px;
-                }
-
-                h2 {
-                    color: #333;
-                    margin-bottom: 10px; 
-                }
-
-                p {
-                    color: #555;
-                }
-
-                .toggle-indicator {
-                    width: 0;
-                    height: 0;
-                    margin-left: 10px;
-                    border-left: 8px solid transparent;
-                    border-right: 8px solid transparent;
-                    border-top: 8px solid #333;
-                    cursor: pointer;
-                    vertical-align: middle;
-                }
-
-                .section-wrapper > h2 {
-                    cursor: pointer;
-                    font-size: 35px;
-                    color: #FFF;
-                }
                 
-                h2.open .toggle-indicator {
-                    border-top: none;
-                    border-bottom: 8px solid #333;
-                }
-                
-                .bgi{
-                    background-image: url('img/chateau-kyoto-2.jpg');
-                    background-size: cover;
-                    background-position: center;
-                    background-repeat: no-repeat;
-                    overflow-x: hidden;
-                    min-height: 100vh;
-                }
-
-                .overlay {
-                    position: absolute;
-                    top: 0;
-                    bottom: 0;
-                    left: 0;
-                    right: 0;
-                    background-color: rgba(0, 0, 0, 0.5); /* Overlay semi-transparent */
-                    color: white;
-                    display: flex;
-                    justify-content: center;
-                    align-items: center;
-                    opacity: 0;
-                    transition: opacity 0.3s;
-                    cursor: pointer;
-                    border-radius: 10px;  /* to keep the rounded corners for the overlay */
-                }
-
-                .attraction-card:hover .overlay {
-                    opacity: 1;  /* affiche l'overlay lors du survol */
-                }
-
-                .image-container {
-                    position: relative;
-                    display: inline-block;  /* This will make the container just as big as the image */
-                    width: 260px;
-                    height: 150px;
-                }
-
-                .image-container:hover .overlay {
-                    opacity: 1;
-                }
-
-                .image-container img {
-                    width: 100%;
-                    height: 100%;
-                    object-fit: cover; /* Adapte l'image à la taille de .image-container */
-                    display: block;
-                }
-
-                .overlay-link {
-                    position: absolute;
-                    top: 0;
-                    bottom: 0;
-                    left: 0;
-                    right: 0;
-                    z-index: 2;  /* This ensures the link is above the overlay for click events */
-                }
-
-                .image-wrapper {
-                    position: relative;
-                    display: inline-block;
-                    width: 260px;
-                    height: 150px;
-                    overflow: hidden;
-                    border-radius: 10px;  /* to keep the rounded corners */
-                }
-
-                .image-wrapper:hover .overlay {
-                    opacity: 1;
-                }
-
-                .description {
-                    font-family: 'Nunito Sans', sans-serif; /* Utiliser la police Nunito Sans pour le texte principal */
-                    font-size: 16px; /* Taille du texte. À ajuster selon vos besoins. */
-                    line-height: 1.5; /* Espacement entre les lignes pour une meilleure lisibilité */
-                    color: #333; /* Couleur du texte. Choisissez une couleur foncée pour un contraste élevé */
-                    padding: 10px; /* Espace autour du texte pour éviter qu'il touche les bords */
-                    margin: 10px 0; /* Espace au-dessus et en dessous du paragraphe */
-                    background-color: #f9f9f9; /* Couleur de fond claire pour le contraste */
-                    border-radius: 5px; /* Coins arrondis pour un aspect plus doux */
-                }
-
-                /* Pour les petits écrans (par exemple les smartphones) */
-                @media (max-width: 600px) {
-                    h1 {
-                        font-size: 9vw;
-                    }
-                }
-
-                /* Pour les écrans moyens (par exemple les tablettes) */
-                @media (min-width: 601px) and (max-width: 1024px) {
-                    h1 {
-                        font-size: 6vw;
-                    }
-                }
-            `}</style>
             </div>
         </div>
     );

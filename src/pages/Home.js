@@ -1,13 +1,13 @@
 import React from 'react';
-import Navigation from '../components/Navigation';
 import Guide from '../components/Guide';
 import Footer from '../components/Footer';
 import Contact from '../components/Contact';
+import Navigation from '../components/Navigation';
 import ButtonGoTop from '../components/ButtonBackToTop';
 
 const Home = () => {
     return (
-        <div>
+        <>
             <div className="accueil" id="home">
                 <div>
                     <Navigation />
@@ -87,7 +87,7 @@ const Home = () => {
 
             <ButtonGoTop />
 
-        </div>
+        </>
     );
 };
 
